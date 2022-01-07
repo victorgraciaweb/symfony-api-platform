@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Messenger\Message;
+namespace Mailer\Messenger\Message;
 
 class UserRegisteredMessage
 {

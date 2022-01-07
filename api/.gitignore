@@ -19,6 +19,13 @@
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
+###> Other files and folders ###
+.php_cs.cache
+.idea
+.DS_Store
+docker-compose.yml
+###< Other files and folders ###
+
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
