@@ -6,7 +6,7 @@ services:
         autoconfigure: true
         bind:
             $mailerDefaultSender: '%env(string:MAILER_DEFAULT_SENDER)%'
-            $host: '%env(string:HOST)%'
+            $host:                '%env(string:HOST)%'
             
     Mailer\:
         resource: '../src/'
