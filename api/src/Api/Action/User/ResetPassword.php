@@ -24,12 +24,8 @@ class ResetPassword
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function __invoke(Request $request, string $id): User
+    public function __invoke(Request $request): User
     {
-        return $this->resetPasswordService->reset(
-            $id,
-            RequestService::getField($request, 'resetPasswordToken'),
-            RequestService::getField($request, 'password')
-        );
+        return $this->resetPasswordService->reset($request);
     }
 }
