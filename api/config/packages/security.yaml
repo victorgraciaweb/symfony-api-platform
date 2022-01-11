@@ -20,6 +20,10 @@ security:
             pattern: ^/api/v1/docs
             methods: [GET]
             security: false
+        reset_password:
+            pattern: ^/api/v1/users/reset_password
+            methods: [POST]
+            security: false
         login:
             pattern: /api/v1/users/login
             stateless: true
