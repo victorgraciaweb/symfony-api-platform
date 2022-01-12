@@ -6,8 +6,6 @@ namespace App\Service\User;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
-use App\Service\Request\RequestService;
-use Symfony\Component\HttpFoundation\Request;
 
 class ActivateAccountService
 {
@@ -18,12 +16,9 @@ class ActivateAccountService
         $this->userRepository = $userRepository;
     }
 
-    public function activate(Request $request, string $id): User
+    public function activate(string $id, string $token): User
     {
-        $user = $this->userRepository->findOneInactiveByIdAndTokenOrFail(
-            $id,
-            RequestService::getField($request, 'token')
-        );
+        $user = $this->userRepository->findOneInactiveByIdAndTokenOrFail($id, $token);
 
         $user->setActive(true);
         $user->setToken(null);

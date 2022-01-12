@@ -26,6 +26,10 @@ class ResetPassword
      */
     public function __invoke(Request $request): User
     {
-        return $this->resetPasswordService->reset($request);
+        return $this->resetPasswordService->reset(
+            RequestService::getField($request, 'userId'),
+            RequestService::getField($request, 'resetPasswordToken'),
+            RequestService::getField($request, 'password')
+        );
     }
 }
